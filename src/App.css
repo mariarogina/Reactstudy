@@ -1,0 +1,130 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  
+}
+
+.App-link {
+  color: #61dafb;
+}
+/*
+.App table {
+ border-top:1px solid blue !important;
+ border-bottom: 1px solid blue !important;
+
+}
+.table td{
+  border-top:1px solid blue !important;
+  border-bottom: 1px solid blue !important;
+ 
+ }
+ .table th{
+  border-top:1px solid blue !important;
+  border-bottom: 1px solid blue !important;
+ }
+
+ table > thead > th{
+  border-top:1px solid blue !important;
+  border-bottom: 1px solid blue !important;
+ 
+ }
+
+ .table thead th{
+  border-top:1px solid blue !important;
+  border-bottom: 1px solid blue !important;
+ 
+ }
+table > thead > tr > th{
+  border-top:1px solid blue;
+ border-bottom: 1px solid blue;}
+
+table > tbody > tr > td{
+  border-top:1px solid blue;
+ border-bottom: 1px solid blue;}
+ table > tbody > tr > th{
+  border-top:1px solid blue;
+ border-bottom: 1px solid blue;}*/
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.popup-box {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+ 
+.box {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+
+.poptext {
+  color:black
+}
+
+.countryname {
+  color:#ab0075;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size:1.8rem
+}
+
+.countrydrop {
+  display:flex;
+  flex-direction: column;
+}
+ 
+.close-icon {
+  content: 'x';
+  cursor: pointer;
+  position: fixed;
+  right: calc(15% - 30px);
+  top: calc(100vh - 85vh - 33px);
+  background: #ededed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 20px;
+}
