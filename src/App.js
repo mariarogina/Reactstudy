@@ -1,18 +1,13 @@
 import "./App.css";
-import DropDownList from "./Components/DropDownList";
-import Popup from "./Components/Popup";
+import DropDownList from "./Components/interactions/DropDownList";
+import Popup from "./Components/interactions/Popup";
 import React, { useEffect, useState } from "react";
-import DataTable from "./Components/DataTable copy";
+import DataTable from "./Components/tables/DataTable copy";
 import { countriesList } from "./countriesList";
-import SkinChange from "./Components/Skin";
-import CountryTable from "./Components/CountryTable";
-import Footer from "./Components/Footer";
-import AppNavBar from "./Components/NavBar";
-import NavBar2 from "./Components/NavBar2";
- import  FetchCat from "./Components/Cat";
- import FetchCountry from "./Components/Country";
-import { SortedTable }from './Components/SortedTable';
-import { ApiTable } from './Components/ApiTable';
+
+import CountryTable from "./Components/tables/CountryTable";
+import { SortedTable }from './Components//tables/SortedTable';
+import { ApiTable } from './Components/tables/ApiTable';
 
 // const popUpList = [
 //   {"btnValue" : "Come and visit Moscow", "paragraph" : "Moscow is the Capital of Russia", "title": "Welcome to Moscow", "imgSrc": "https://gkd.ru/assets/i/ai/4/2/8/i/2884202.jpg"},
@@ -85,8 +80,8 @@ const data = React.useMemo(
 
   return (
     <div style={styles} className="App">
-    <SkinChange onClick={changeColor} />
-    <NavBar2/>
+   
+   
       <header className="App-header">
         <DropDownList list={countriesList} />
         {popUpList.map((item, key) => (
@@ -95,12 +90,11 @@ const data = React.useMemo(
         <DataTable />
         <br/>
         <CountryTable/>
-        <FetchCountry/>
+        
         <SortedTable columns={columns} data={data}/>
       <br/>
       <br/>
       <ApiTable columns={columns} data={data}/>
-        <Footer/>
         
         
       </header>
