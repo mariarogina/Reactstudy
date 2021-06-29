@@ -15,6 +15,9 @@ export default function DataTable() {
     setFormData(initialForm);
   }, [setRowList, setFormData, formData]);
 
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTermCity, setSearchTermCity] = useState("");
+
   const handleSortByField = useCallback(
     (field) => {
       const sortedRowList = rowList.sort((a, b) => {
@@ -44,6 +47,15 @@ export default function DataTable() {
     [rowList, setRowList, setIsUpDirection, isUpDirection]
   );
 
+
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+  const handleChangeCity = (event) => {
+    setSearchTermCity(event.target.value);
+  };
+
+
   useEffect(() => {
     fetch(
       "https://gist.githubusercontent.com/mariarogina/1bf4e1947ec2fc1e8ded4882e57f4d69/raw/89eb2570fcfd69f31c4dfd21f5f49733fe0bb4d0/countriesdata.json"
@@ -52,7 +64,7 @@ export default function DataTable() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        
         setRowList(
           data.map((item) =>
             createData(
@@ -67,11 +79,37 @@ export default function DataTable() {
       });
   }, [setRowList, createData]);
 
-  if (!rowList) {
+  const filteredRowList = rowList.filter((item) =>
+  item.name.toLowerCase().includes(searchTerm)  &&
+  item.capital.toLowerCase().includes(searchTermCity) 
+);
+
+  if (!filteredRowList) {
     return <div>Still Loading</div>;
   }
 
   return (
+
+    <div style={{ paddingTop: "50px" }}>
+      <h1 style={{ color: "#ab0075" }}>The Table of Countries</h1>
+      <br />
+      <div className="App">
+        <input
+          type="text"
+          placeholder="Filter country"
+          value={searchTerm}
+          onChange={handleChange}
+        />
+        <div />
+        <div className="App">
+        <input
+          type="text"
+          placeholder="Filter city"
+          value={searchTermCity}
+          onChange={handleChangeCity}
+        />
+        <div />
+        <div>
     <div style={{ paddingTop: "50px" }}>
       <h1 style={{ color: "white" }}>The table of Three Countries</h1>
       <br />
@@ -261,7 +299,7 @@ export default function DataTable() {
           </thead>
 
           <tbody>
-            {rowList.map((row, index) => (
+            {filteredRowList.map((row) => (
               <tr key={row.name}>
                 <th scope="row">{row.id}</th>
 
@@ -274,6 +312,10 @@ export default function DataTable() {
           </tbody>
         </table>
       </div>
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
   );
 }

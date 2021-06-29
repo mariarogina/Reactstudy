@@ -32,7 +32,7 @@ export function ApiTable() {
         Header: "Image",
         accessor: "image.url",  
         Cell: (row) => {
-          console.info(row)
+          
           return <div><img height={200} src={row.row.original.image?.url}/></div>
         },
       }

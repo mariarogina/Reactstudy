@@ -40,7 +40,7 @@ export default function CountryTable() {
 
       setRowList(
         sortedRowList.map((item) =>
-          createData(item.numericCode, item.name, item.capital, item.population)
+          createData(item.numericCode.toLowerCase(), item.name.toLowerCase(), item.capital.toLowerCase(), item.population.toLowerCase())
         )
       );
 
