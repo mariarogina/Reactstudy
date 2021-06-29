@@ -87,7 +87,6 @@ function App() {
         <br />
         <CountryTable />
 
-        <SortedTable columns={columns} data={data} />
         <CatMock />
 
         <br />
