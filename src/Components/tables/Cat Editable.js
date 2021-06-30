@@ -86,19 +86,20 @@ function CatEd() {
 
     
     return (
-        <div className="container">
-            <h1>Simple Cat Table</h1>
-            <table>
+        <div className="container" style={{marginTop:'70px'}}>
+            <h1>Simple Cat Table (edit temperament)</h1>
+            <table class="table">
                 <thead>
                 <tr>
-                    <th>Cat Temperament</th>
-                    <th>Cat Name </th>
+                    <th scope="col">Cat Temperament</th>
+                    <th scope="col">Cat Name </th>
                   
-                    <th>Cat intel</th>
-                    <th>Cat img</th>
+                    <th scope="col">Intelligence</th>
+                    <th scope="col">Imange</th>
                 </tr>
                 </thead>
                 <tbody>
+                <th scope="row"></th>
                 {
                     data.map((item) => (
                         <tr key={item.id}>
@@ -117,15 +118,15 @@ function CatEd() {
                                 {
                                     inEditMode.status && inEditMode.rowKey === item.id ? (
                                         <React.Fragment>
-                                            <button
-                                                className={"btn-success"}
+                                            <button   style={{margin:'20px'}}
+                                                className={"btn btn-outline-dark"}
                                                 onClick={() => onSave({id: item.id, newIntel: catIntel})}
                                             >
                                                 Save
                                             </button>
 
-                                            <button
-                                                className={"btn-secondary"}
+                                            <button   style={{margin:'20px'}}
+                                                className={"btn btn-outline-danger"}
                                                 style={{marginLeft: 8}}
                                                 onClick={() => onCancel()}
                                             >
@@ -134,7 +135,8 @@ function CatEd() {
                                         </React.Fragment>
                                     ) : (
                                         <button
-                                            className={"btn-primary"}
+                                        style={{margin:'20px'}}
+                                            className={"btn btn-outline-warning"}
                                             onClick={() => onEdit({id: item.id, currentIntel: item.temperament})}
                                         >
                                             Edit

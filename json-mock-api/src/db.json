@@ -2,15 +2,13 @@
   "inventory": [
     {
       "id": 1,
-      "product_name": "Weetabix",
+      "product_name": "Collgate toothpaste!!!",
       "product_category": "Cereal",
       "unit_price": "501"
     },
     {
-      "id": 2,
-      "product_name": "Colgate Toothpaste",
-      "product_category": "Toiletries",
-      "unit_price": "119"
+      "product_name": "Collgate toothpaste!!!",
+      "id": 2
     },
     {
       "id": 3,
@@ -36,7 +34,7 @@
       "cfa_url": "http://cfa.org/Breeds/BreedsAB/Abyssinian.aspx",
       "vetstreet_url": "http://www.vetstreet.com/cats/abyssinian",
       "vcahospitals_url": "https://vcahospitals.com/know-your-pet/cat-breeds/abyssinian",
-      "temperament": "Lazy ass",
+      "temperament": "Nice guy",
       "origin": "Egypt",
       "country_codes": "EG",
       "country_code": "EG",
@@ -82,7 +80,7 @@
       "id": "aege",
       "name": "Aegean",
       "vetstreet_url": "http://www.vetstreet.com/cats/aegean-cat",
-      "temperament": "Blablabla",
+      "temperament": "A mischief",
       "origin": "Greece",
       "country_codes": "GR",
       "country_code": "GR",
@@ -129,7 +127,7 @@
       "cfa_url": "http://cfa.org/Breeds/BreedsAB/AmericanBobtail.aspx",
       "vetstreet_url": "http://www.vetstreet.com/cats/american-bobtail",
       "vcahospitals_url": "https://vcahospitals.com/know-your-pet/cat-breeds/american-bobtail",
-      "temperament": "fool",
+      "temperament": "A naughty beauty",
       "origin": "United States",
       "country_codes": "US",
       "country_code": "US",

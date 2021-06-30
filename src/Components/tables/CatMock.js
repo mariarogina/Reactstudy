@@ -84,16 +84,16 @@ function CatMock() {
     return (
         <div style={{margin:'200px'}}className="container">
             <h1>Simple Cat Table</h1>
-            <table>
+            <table class="table">
                 <thead>
                 <tr>
-                    <th>Cat Name</th>
-                    <th>Cat intelligence</th>
-                    <th>Cat Temperament</th>
-                    <th>images</th>
+                    <th  scope="col">Cat Name</th>
+                    <th  scope="col">Intelligence</th>
+                    <th  scope="col">Cat Temperament</th>
+                    <th  scope="col">images</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody> <th scope="row"></th>
                 {
                     data.map((item) => (
                         <tr key={item.id}>
@@ -112,16 +112,18 @@ function CatMock() {
                             
                                 {
                                     inEditMode.status && inEditMode.rowKey === item.id ? (
-                                        <React.Fragment>
+                                        <React.Fragment style ={{margin:'10px'}}>
                                             <button
-                                                className={"btn-success"}
+                                              style={{margin:'20px'}}
+                                                className={"btn btn-outline-dark"}
                                                 onClick={() => onSave({id: item.id, newTemp: Temp})}
                                             >
                                                 Save
                                             </button>
 
                                             <button
-                                                className={"btn-secondary"}
+                                              style={{margin:'20px'}}
+                                                className={"btn btn-outline-danger"}
                                                 style={{marginLeft: 8}}
                                                 onClick={() => onCancel()}
                                             >
@@ -129,8 +131,8 @@ function CatMock() {
                                             </button>
                                         </React.Fragment>
                                     ) : (
-                                        <button
-                                            className={"btn-primary"}
+                                        <button style ={{margin:'20px'}}
+                                            className={"btn btn-outline-warning"}
                                             onClick={() => onEdit({id: item.id, currentTemp: item.temperament})}
                                         >
                                             Edit

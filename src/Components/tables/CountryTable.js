@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import { useState, useEffect } from "react";
+import CountryForm from '../CountryForm'
 
 function createData(numericCode, name, capital, population) {
   return { numericCode, name, capital, population };
@@ -14,12 +15,10 @@ export default function CountryTable() {
     capital: "",
     population: 0,
   };
-  const [formData, setFormData] = useState(initialForm);
 
-  const handleAddCountry = useCallback(() => {
-    setRowList((prevList) => [...prevList, formData]);
-    setFormData(initialForm);
-  }, [setRowList, setFormData, formData]);
+  const handleAddCountry = useCallback((values) => {
+    setRowList((prevList) => [...prevList, values]);
+  }, [setRowList]);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [searchTermCity, setSearchTermCity] = useState("");
@@ -37,11 +36,10 @@ export default function CountryTable() {
           return 0;
         }
       });
-
       setRowList(
-        sortedRowList.map((item) =>
-          createData(item.numericCode.toLowerCase(), item.name.toLowerCase(), item.capital.toLowerCase(), item.population.toLowerCase())
-        )
+        sortedRowList.map((item) => {
+          return createData(item.numericCode, item.name, item.capital, item.population)
+        })
       );
 
       setIsUpDirection(!isUpDirection);
@@ -116,8 +114,8 @@ export default function CountryTable() {
   
 
   return (
-    <div style={{ paddingTop: "50px" }}>
-      <h1 style={{ color: "#ab0075" }}>The Table of Countries</h1>
+    <div style={{ paddingTop: "50px", marginTop:'60px'}}>
+      <h1 style={{ color: "#ab0075" }}>The Table of Countries RESTful API</h1>
       <br />
       <div className="App">
         <input
@@ -138,79 +136,9 @@ export default function CountryTable() {
         <div>
           <br />
           <h1> ADD A COUNTRY </h1>
-          <label>
-            Code
-            <input
-              className="inpField"
-              type="text"
-              placeholder="numericCode"
-              value={formData.numericCode}
-              onChange={(event) =>
-                setFormData((prevState) => ({
-                  ...prevState,
-                  numericCode: event.target.value,
-                }))
-              }
-            />
-          </label>
-          <label>
-            Name
-            <input
-              className="inpField"
-              type="text"
-              placeholder="name"
-              value={formData.name}
-              onChange={(event) =>
-                setFormData((prevState) => ({
-                  ...prevState,
-                  name: event.target.value,
-                }))
-              }
-            />
-          </label>
-          <label>
-            Capital
-            <input
-              className="inpField"
-              type="text"
-              placeholder="capital"
-              value={formData.capital}
-              onChange={(event) =>
-                setFormData((prevState) => ({
-                  ...prevState,
-                  capital: event.target.value,
-                }))
-              }
-            />
-          </label>
-          <label>
-            Population
-            <input
-              className="inpField"
-              type="number"
-              placeholder="population"
-              value={formData.population}
-              onChange={(event) =>
-                setFormData((prevState) => ({
-                  ...prevState,
-                  population: event.target.value,
-                }))
-              }
-            />
-          </label>
-
-          <br />
-          <br />
+          <CountryForm handleSubmit={handleAddCountry} initialData={{name: '', numericCode: 0, population: 0, capital: ''}}/>
           <button
-            type="button"
-            className="btn btn-primary"
-            style={{ padding: "10px", minwidth: "100px" }}
-            onClick={handleAddCountry}
-          >
-            Add a country
-          </button>
-          <button
-            className="btn btn-outline-primary"
+            className="btn btn-success"
             style={{
               padding: "10px",
               margin: "10px",
@@ -224,7 +152,7 @@ export default function CountryTable() {
             Sort by Code{" "}
           </button>
           <button
-            className="btn btn-outline-primary"
+            className="btn btn-success"
             style={{
               padding: "10px",
               margin: "10px",
@@ -238,7 +166,7 @@ export default function CountryTable() {
             Sort by Name{" "}
           </button>
           <button
-            className="btn btn-outline-primary"
+            className="btn btn-success"
             style={{
               padding: "10px",
               margin: "10px",
@@ -252,7 +180,7 @@ export default function CountryTable() {
             Sort by Capital{" "}
           </button>
           <button
-            className="btn btn-outline-primary"
+            className="btn btn-success"
             style={{
               padding: "10px",
               margin: "10px",

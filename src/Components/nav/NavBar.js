@@ -1,38 +1,29 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import React from 'react'
+import { NavLink} from  'react-router-dom'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-}));
 
-export default function AppNavBar() {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
-      <AppBar position="fixed">
-        <Toolbar variant="dense">
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" color="inherit">
-            Photos
-          </Typography>
-          <Typography variant="h6" color="inherit">
-            Photos
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+const Navbar = () => {
+    return ( <div >
+        <ul id="navbar" class=" navbar navbar-expand-lg 
+        navbar-light  fixed-top py-lg-0 " >
+        <li  class="nav-link">
+          <NavLink style={{color:"white", margin:"15px", fontSize:'1.4rem', width:'200px'}} to='/' activeClassName="active" exact>Home</NavLink>
+        </li>
+        <li  class="nav-link">
+          <NavLink style={{color:"white",  margin:"15px", fontSize:'1.4rem', width:'200px'}} to='/countries' activeClassName="active" >Countries</NavLink>
+        </li>
+        <li  class="nav-link">
+          <NavLink style={{color:"white",  margin:"15px", fontSize:'1.4rem', width:'200px'}} to='/simplecat' activeClassName="active">Cats table</NavLink>
+        </li>
+        <li  class="nav-link">
+          <NavLink style={{color:"white",  margin:"15px", fontSize:'1.4rem', width:'200px'}} to='/catmock' activeClassName="active">Cat editable</NavLink>
+        </li>
+        <li  class="nav-link">
+          <NavLink style={{color:"white",  margin:"15px", fontSize:'1.4rem', width:'200px'}} to='/cated' activeClassName="active">Cats reserve</NavLink>
+        </li>
+      </ul>
+      </div>
+    )
 }
+
+export default Navbar

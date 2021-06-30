@@ -90,8 +90,8 @@ export default function DataTable() {
 
   return (
 
-    <div style={{ paddingTop: "50px" }}>
-      <h1 style={{ color: "#ab0075" }}>The Table of Countries</h1>
+    <div style={{ paddingTop: "50px", marginTop:'60px' }}>
+      <h1 style={{ color: "#ab0075" }}>The Short Table of Countries</h1>
       <br />
       <div className="App">
         <input
@@ -204,7 +204,7 @@ export default function DataTable() {
         </div>
         <br />
         <button
-        className="btn btn-outline-primary"
+        className="btn btn-info"
         style={{ padding: "10px", margin:'10px', minwidth: "100px", color:'white'}}
           onClick={() => {
             
@@ -215,7 +215,7 @@ export default function DataTable() {
           Sort by Id 
         </button>
         <button
-        className="btn btn-outline-primary"
+        className="btn btn-info"
         style={{ padding: "10px", margin:'10px', minwidth: "100px", color:'white'}}
           onClick={() => {
             
@@ -226,7 +226,7 @@ export default function DataTable() {
           Sort by Name 
         </button>
         <button
-        className="btn btn-outline-primary"
+        className="btn btn-info"
         style={{ padding: "10px", margin:'10px', minwidth: "100px", color:'white'}}
           onClick={() => {
             
@@ -237,7 +237,7 @@ export default function DataTable() {
           Sort by Capital 
         </button>
         <button
-        className="btn btn-outline-primary"
+        className="btn btn-info"
         style={{ padding: "10px", margin:'10px', minwidth: "100px", color:'white'}}
           onClick={() => {
             
@@ -248,7 +248,7 @@ export default function DataTable() {
           Sort by Language 
         </button>
         <button
-        className="btn btn-outline-primary"
+        className="btn btn-info"
         style={{ padding: "10px", margin:'10px', minwidth: "100px", color:'white'}}
           onClick={() => {
             

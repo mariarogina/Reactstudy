@@ -81,8 +81,8 @@ export default function SimpleCat() {
 
   return (
 
-    <div style={{ paddingTop: "50px" }}>
-      <h1 style={{ color: "#ab0075" }}>The Table of CATZ</h1>
+    <div style={{ paddingTop: "50px", marginTop:'50px' }}>
+      <h1 style={{ color: "#ab0075" }}>The Table of CATS for filter/sort</h1>
       <br />
       <div className="App">
         <input
@@ -97,7 +97,7 @@ export default function SimpleCat() {
     <div style={{ paddingTop: "50px" }}>
       
         <button
-        className="btn btn-outline-primary"
+        className="btn btn-info"
         style={{ padding: "10px", margin:'10px', minwidth: "100px", color:'white'}}
           onClick={() => {
             
@@ -108,7 +108,7 @@ export default function SimpleCat() {
           Sort by Name 
         </button>
         <button
-        className="btn btn-outline-primary"
+        className="btn btn-info"
         style={{ padding: "10px", margin:'10px', minwidth: "100px", color:'white'}}
           onClick={() => {
             
